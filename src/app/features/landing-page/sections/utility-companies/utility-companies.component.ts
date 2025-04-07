@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-utility-companies',
+  selector: 'utility-companies',
   imports: [],
   templateUrl: './utility-companies.component.html',
   styleUrl: './utility-companies.component.scss'
