@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+//Theming
 body{
   font-family: "Host Grotesk", sans-serif;
   margin: 0;
@@ -11,7 +13,7 @@ body{
 
 }
 
-// Definindo cores para tema claro
+
 body.light-theme {
   --background-color-light: #ffffff;
   --text-color-light: #000000;
@@ -27,8 +29,8 @@ body {
   color: var(--text-color-dark);
 }
 
-
-//ANIMATIONS
+//GENERAL
+//GENERAL - ANIMATIONS
 
 .full-blink {
   animation: fullBlink 7s ease-in 0s 3 normal forwards;
@@ -66,7 +68,10 @@ body {
 }
 
 
-section{
+//LANDING PAGE
+.landing-page-section{
   min-height: 100vh;
   border: solid 1px white;
 }
+
+
