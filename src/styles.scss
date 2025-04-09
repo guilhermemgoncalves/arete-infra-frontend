@@ -74,4 +74,16 @@ body {
   //border: solid 1px white;
 }
 
+.target {
+  width: 100%;
+  height: 200px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.target.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
