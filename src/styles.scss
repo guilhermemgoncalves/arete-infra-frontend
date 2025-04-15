@@ -1,14 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+//Theming
 body{
   font-family: "Host Grotesk", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
   --background-color-dark: rgb(8 9 11 / var(--tw-bg-opacity, 1));
   --text-color-dark: #ffffff;
+
 }
 
-// Definindo cores para tema claro
+
 body.light-theme {
   --background-color-light: #ffffff;
   --text-color-light: #000000;
@@ -24,8 +29,15 @@ body {
   color: var(--text-color-dark);
 }
 
+//GENERAL
 
-//ANIMATIONS
+li {
+  list-style: none;
+  margin-left: -40px;
+}
+
+
+//GENERAL - ANIMATIONS
 
 .full-blink {
   animation: fullBlink 7s ease-in 0s 3 normal forwards;
@@ -61,3 +73,26 @@ body {
     opacity: 0.7;
   }
 }
+
+
+//LANDING PAGE
+.landing-page-section{
+  min-height: 100vh;
+  //border: solid 1px white;
+}
+
+.target {
+  width: 100%;
+  height: 200px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.target.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
