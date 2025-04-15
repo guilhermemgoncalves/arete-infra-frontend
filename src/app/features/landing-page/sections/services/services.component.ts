@@ -14,8 +14,7 @@ export class ServicesComponent {
 
   constructor() {
     this.servicesText = `
-      <p>Somos uma empresa totalmente focada na satifsa&ccedil;&atilde;o do cliente e contamos com os seguintes servi&ccedil;os:</p>
-      <p>Somos uma empresa totalmente focada na satifsa&ccedil;&atilde;o do cliente e contamos com os seguintes servi&ccedil;os:</p>
+      <p>Somos uma empresa totalmente focada na satisfa&ccedil;&atilde;o do cliente e contamos com os seguintes servi&ccedil;os:</p>
       <ul>
       <li>Dimensionamento de redes de esgoto</li>
       <li>Projetos conceituais e executivos</li>

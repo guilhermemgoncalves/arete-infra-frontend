@@ -31,6 +31,10 @@ body {
 
 //GENERAL
 
+li {
+  list-style: none;
+  margin-left: -40px;
+}
 
 
 //GENERAL - ANIMATIONS
@@ -88,5 +92,7 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
 
 
