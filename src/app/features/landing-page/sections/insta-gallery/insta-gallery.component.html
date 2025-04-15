@@ -1,1 +1,9 @@
-<section id="instagram-gallery" class="landing-page-section">insta-gallery works!</section>
+<section id="instagram-gallery" class="landing-page-section">
+  <div class="gallery-grid">
+    @for (image of images; track image.key) {
+      <a [href]="image.link" target="_blank" rel="noopener noreferrer">
+        <img [src]="image.key | imageUrlDownload">
+      </a>
+    }
+  </div>
+</section>
