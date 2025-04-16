@@ -17,23 +17,6 @@ section {
   gap: 80px;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: lighter;
-  padding-bottom: 5px;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 50%;
-  height: 2px;
-  background-color: var(--text-color-dark);
-  margin: 20px auto;
-}
-
-
 .images {
   display: flex;
   flex-direction: column;
@@ -50,17 +33,6 @@ section {
   font-size: 1rem;
   font-weight: lighter;
 }
-
-.section-divider {
-  border: none;
-  border-top: 2px solid var(--text-color-dark);
-  width: 80%;
-  margin: 40px auto 0;
-  padding: 40px;
-  opacity: 0.5;
-}
-
-
 
 @media (min-width: 768px) {
   .services-container {
