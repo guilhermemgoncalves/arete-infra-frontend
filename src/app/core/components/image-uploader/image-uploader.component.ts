@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
+import {UploadService} from '../../services/upload/upload.service';
 
 @Component({
   selector: 'app-image-uploader',
@@ -7,7 +8,9 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrl: './image-uploader.component.scss'
 })
 export class ImageUploaderComponent {
-  @Output() filesSelected = new EventEmitter<FormData>();
+
+  constructor(private uploadService: UploadService) {
+  }
 
   onFilesSelected(event: Event): void {
     const files = (event.target as HTMLInputElement).files;
@@ -18,9 +21,8 @@ export class ImageUploaderComponent {
       formData.append(`file${index}`, file);
     });
 
-    for (const pair of formData.entries()) {
-      console.log(pair[0], pair[1]);
-    }
-    this.filesSelected.emit(formData);
+    console.log(formData);
+    this.uploadService.uploadImages(formData).subscribe();
+
   }
 }
