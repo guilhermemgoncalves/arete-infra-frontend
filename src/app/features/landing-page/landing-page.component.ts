@@ -6,6 +6,7 @@ import {ServicesComponent} from './sections/services/services.component';
 import {InstaGalleryComponent} from './sections/insta-gallery/insta-gallery.component';
 import {ContactsComponent} from './sections/contacts/contacts.component';
 import {Meta, Title} from '@angular/platform-browser';
+import {ImageUploaderComponent} from '../../core/components/image-uploader/image-uploader.component';
 
 @Component({
   selector: 'landing-page',
@@ -15,7 +16,7 @@ import {Meta, Title} from '@angular/platform-browser';
     UtilityCompaniesComponent,
     ServicesComponent,
     InstaGalleryComponent,
-    ContactsComponent
+    ContactsComponent,
   ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']

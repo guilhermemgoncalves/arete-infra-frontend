@@ -1,9 +1,25 @@
 import { Routes } from '@angular/router';
-import {ComingSoonComponent} from './core/components/coming-soon/coming-soon.component';
-import {LandingPageComponent} from './features/landing-page/landing-page.component';
 
 export const routes: Routes = [
-  {path: 'stage', component: LandingPageComponent},
-  {path: '', component: ComingSoonComponent}
+  {
+    path: 'stage',
+    loadComponent: () =>
+      import('./features/landing-page/landing-page.component').then(
+        (m) => m.LandingPageComponent
+      ),
+  },
+  {
+    path: 'internal',
+    loadComponent: () =>
+      import('./features/internal/internal.component').then(
+        (m) => m.InternalComponent
+      ),
+  },
+  {
+    path: '',
+    loadComponent: () =>
+      import('./core/components/coming-soon/coming-soon.component').then(
+        (m) => m.ComingSoonComponent
+      ),
+  },
 ];
-

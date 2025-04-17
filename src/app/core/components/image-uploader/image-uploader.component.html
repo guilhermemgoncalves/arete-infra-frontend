@@ -1,0 +1,9 @@
+<button (click)="fileInput.click()">Upload de Imagem</button>
+<input
+  #fileInput
+  type="file"
+  accept="image/*"
+  (change)="onFilesSelected($event)"
+  style="display: none;"
+  multiple
+/>

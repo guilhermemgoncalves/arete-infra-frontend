@@ -93,6 +93,22 @@ li {
   transform: translateY(0);
 }
 
+//LANDING PAGE
 
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--text-color-dark);
+  width: 80%;
+  margin: 40px auto 0;
+  padding: 40px;
+  opacity: 0.5;
+}
 
 
