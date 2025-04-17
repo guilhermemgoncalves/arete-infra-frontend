@@ -17,7 +17,6 @@ import {ImageUploaderComponent} from '../../core/components/image-uploader/image
     ServicesComponent,
     InstaGalleryComponent,
     ContactsComponent,
-    ImageUploaderComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
