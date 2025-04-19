@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ImageUrlDownloadPipe} from "../../pipes/image-url-download.pipe";
 import {FormsModule} from '@angular/forms';
-import {ImageDto} from './image-dto';
+import {ImageDto} from '../../dtos/image-dto';
 import {ImageService} from '../../services/image/image.service';
 import {Endpoints} from '../../enums/enpoint-enums';
 
@@ -20,7 +20,7 @@ export class ImageSelectorComponent {
   selectedEndpoint: Endpoints = Endpoints.INSTAGRAM;
 
   constructor(private imageService: ImageService) {
-    this.getImages().then(console.log);
+    this.getImages();
   }
 
   async getImages() {

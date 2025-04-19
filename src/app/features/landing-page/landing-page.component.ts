@@ -6,7 +6,7 @@ import {ServicesComponent} from './sections/services/services.component';
 import {InstaGalleryComponent} from './sections/insta-gallery/insta-gallery.component';
 import {ContactsComponent} from './sections/contacts/contacts.component';
 import {Meta, Title} from '@angular/platform-browser';
-import {InstagramImageDto} from './sections/insta-gallery/instagram-image.dto';
+import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
 import {LandingPageService} from './landing-page.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import {Component, input} from '@angular/core';
 import {ImageUrlDownloadPipe} from '../../../../core/pipes/image-url-download.pipe';
-import {InstagramImageDto} from './instagram-image.dto';
+import {InstagramImageDto} from '../../../../core/dtos/instagram-image.dto';
 
 @Component({
   selector: 'insta-gallery',

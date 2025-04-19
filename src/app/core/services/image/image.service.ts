@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../../../environments/environment';
-import {ImageDto} from '../../components/image-selector/image-dto';
-import {InstagramImageDto} from '../../../features/landing-page/sections/insta-gallery/instagram-image.dto';
+import {ImageDto} from '../../dtos/image-dto';
+import {InstagramImageDto} from '../../dtos/instagram-image.dto';
 import {Endpoints} from '../../enums/enpoint-enums';
 
 @Injectable({

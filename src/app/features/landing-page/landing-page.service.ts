@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {InstagramImageDto} from './sections/insta-gallery/instagram-image.dto';
+import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
 import {environment} from '../../../environments/environment';
 
 @Injectable({
