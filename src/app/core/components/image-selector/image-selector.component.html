@@ -1,0 +1,20 @@
+<h1>Image Gallery</h1>
+<div class="endpoint-selector">
+  <select [(ngModel)]="selectedEndpoint">
+    @for (endpoint of endpoints; track endpoint) {
+      <option [value]="endpoint">{{ getEndpointName(endpoint) }}</option>
+    }
+  </select>
+</div>
+<div class="image-grid">
+  @for (image of images; track image.key) {
+    <div class="image-item">
+      <img [src]="image.key | imageUrlDownload" [alt]="'Imagem ' + image.key">
+      <div class="checkbox-wrapper">
+        <input type="checkbox" [(ngModel)]="image.selected">
+        <label>Selecionar</label>
+      </div>
+    </div>
+  }
+</div>
+<button (click)="saveImages()" class="btn btn-primary">Save</button>
