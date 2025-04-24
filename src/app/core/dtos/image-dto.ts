@@ -4,4 +4,5 @@ export interface ImageDto {
   extension: string;
   name: string;
   selected?: boolean;
+  link?: string;
 }

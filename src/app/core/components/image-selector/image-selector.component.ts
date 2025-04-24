@@ -29,7 +29,7 @@ export class ImageSelectorComponent {
 
 
   saveImages(){
-    const imagesToSave = this.images.filter(image => image.selected);
+    const imagesToSave: Array<ImageDto> = this.images.filter(image => image.selected);
     this.imageService.selectImages(imagesToSave, this.selectedEndpoint);
     console.log(imagesToSave);
   }
