@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {GroupingLogoComponent} from '../../../../core/components/grouping-logo/grouping-logo.component';
+import {LogoImageDto} from '../../../../core/dtos/log-image.dto';
 
 @Component({
   selector: 'customers',
@@ -10,6 +11,8 @@ import {GroupingLogoComponent} from '../../../../core/components/grouping-logo/g
   styleUrl: './customers.component.scss'
 })
 export class CustomersComponent {
+
+  customersLogos= input.required<Array<LogoImageDto>>();
 
   customersText: string = `
       <p>Somos uma empresa totalmente focada na satisfa&ccedil;&atilde;o do cliente e contamos com os seguintes servi&ccedil;os:</p>

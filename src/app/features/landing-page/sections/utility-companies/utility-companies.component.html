@@ -1,7 +1,7 @@
 <section id="utility-companies" class="landing-page-section container-xxl" fadeInOnScroll>
   <h1 class="section-title">Concessionárias</h1>
   <div class="companies-container">
-    <app-grouping-logo></app-grouping-logo>
+    <app-grouping-logo [logos]="companyLogos()"></app-grouping-logo>
     <div class="images">
       <div [innerHTML]="companiesText" class="text"></div>
     </div>

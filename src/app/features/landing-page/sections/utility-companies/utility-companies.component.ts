@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {FadeInOnScrollDirective} from '../../../../core/directives/fade-in-on-scroll.directive';
 import {GroupingLogoComponent} from "../../../../core/components/grouping-logo/grouping-logo.component";
+import {LogoImageDto} from '../../../../core/dtos/log-image.dto';
 
 @Component({
   selector: 'utility-companies',
@@ -12,6 +13,9 @@ import {GroupingLogoComponent} from "../../../../core/components/grouping-logo/g
   styleUrl: './utility-companies.component.scss'
 })
 export class UtilityCompaniesComponent {
+
+
+  companyLogos= input.required<Array<LogoImageDto>>();
 
   companiesText: string = `
       <p>Somos uma empresa totalmente focada na satisfa&ccedil;&atilde;o do cliente e contamos com os seguintes servi&ccedil;os:</p>

@@ -4,7 +4,6 @@ import {CustomersComponent} from './sections/customers/customers.component';
 import {UtilityCompaniesComponent} from './sections/utility-companies/utility-companies.component';
 import {ServicesComponent} from './sections/services/services.component';
 import {InstaGalleryComponent} from './sections/insta-gallery/insta-gallery.component';
-import {ContactsComponent} from './sections/contacts/contacts.component';
 import {Meta, Title} from '@angular/platform-browser';
 import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
 import {LandingPageService} from './landing-page.service';
@@ -20,7 +19,6 @@ import {LogoImageDto} from '../../core/dtos/log-image.dto';
     UtilityCompaniesComponent,
     ServicesComponent,
     InstaGalleryComponent,
-    ContactsComponent,
   ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
@@ -28,6 +26,7 @@ import {LogoImageDto} from '../../core/dtos/log-image.dto';
 export class LandingPageComponent {
   instagramImages = signal<Array<InstagramImageDto>>([]);
   customersLogos = signal<Array<LogoImageDto>>([]);
+  companyLogos = signal<Array<LogoImageDto>>([]);
 
   constructor(
     private metaService: Meta,
@@ -60,10 +59,10 @@ export class LandingPageComponent {
   }
   private fetchCompanyLogos(): void {
     this.landingPageService.getCompanyLogos().then(logos => {
-      this.customersLogos.set(logos);
+      this.companyLogos.set(logos);
     }).catch(error => {
       console.error('Erro ao carregar logos:', error);
-      this.customersLogos.set([]);
+      this.companyLogos.set([]);
     });
   }
 

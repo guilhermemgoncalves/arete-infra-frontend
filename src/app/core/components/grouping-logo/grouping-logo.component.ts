@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
+import {LogoImageDto} from '../../dtos/log-image.dto';
+import {ImageUrlDownloadPipe} from '../../pipes/image-url-download.pipe';
 
 @Component({
   selector: 'app-grouping-logo',
-  imports: [],
+  imports: [
+    ImageUrlDownloadPipe
+  ],
   templateUrl: './grouping-logo.component.html',
   styleUrl: './grouping-logo.component.scss'
 })
 export class GroupingLogoComponent {
-  logos: string[] = [
-    'https://placehold.co/600x400',
-    'https://placehold.co/600x400',
-    'https://placehold.co/600x400',
-    'https://placehold.co/600x400',
-    'https://placehold.co/600x400',
-    'https://placehold.co/600x400'
-  ];
+
+  logos= input.required<Array<LogoImageDto>>();
+
 }
