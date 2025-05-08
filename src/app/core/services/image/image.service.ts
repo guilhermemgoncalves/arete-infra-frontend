@@ -34,7 +34,7 @@ export class ImageService {
   async selectImages(images: Array<ImageDto>, endpoint: Endpoints): Promise<void> {
     const imageToSelect: InstagramImageDto[] = images.map(image => ({
       key: image.key,
-      description: '',
+      description: endpoint,
       link: image.link || ''
     }));
 
