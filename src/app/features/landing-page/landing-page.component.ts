@@ -6,8 +6,11 @@ import {ServicesComponent} from './sections/services/services.component';
 import {InstaGalleryComponent} from './sections/insta-gallery/insta-gallery.component';
 import {ContactsComponent} from './sections/contacts/contacts.component';
 import {Meta, Title} from '@angular/platform-browser';
-import {InstagramImageDto} from './sections/insta-gallery/instagram-image.dto';
+import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
 import {LandingPageService} from './landing-page.service';
+import {LogoImageDto} from '../../core/dtos/log-image.dto';
+
+
 
 @Component({
   selector: 'landing-page',
@@ -23,7 +26,8 @@ import {LandingPageService} from './landing-page.service';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent {
-  image = signal<Array<InstagramImageDto>>([]);
+  instagramImages = signal<Array<InstagramImageDto>>([]);
+  customersLogos = signal<Array<LogoImageDto>>([]);
 
   constructor(
     private metaService: Meta,
@@ -31,16 +35,35 @@ export class LandingPageComponent {
     private landingPageService: LandingPageService
   ) {
     this.fetchInstagramImages();
+    this.fetchCustomersLogos();
+    this.fetchCompanyLogos();
     this.updateMetaTags();
   }
 
 
   private fetchInstagramImages(): void {
     this.landingPageService.getInstaGallery().then(images => {
-      this.image.set(images);
+      this.instagramImages.set(images);
     }).catch(error => {
       console.error('Erro ao carregar imagens:', error);
-      this.image.set([]);
+      this.instagramImages.set([]);
+    });
+  }
+
+  private fetchCustomersLogos(): void {
+    this.landingPageService.getCustomersLogos().then(logos => {
+      this.customersLogos.set(logos);
+    }).catch(error => {
+      console.error('Erro ao carregar logos:', error);
+      this.customersLogos.set([]);
+    });
+  }
+  private fetchCompanyLogos(): void {
+    this.landingPageService.getCompanyLogos().then(logos => {
+      this.customersLogos.set(logos);
+    }).catch(error => {
+      console.error('Erro ao carregar logos:', error);
+      this.customersLogos.set([]);
     });
   }
 

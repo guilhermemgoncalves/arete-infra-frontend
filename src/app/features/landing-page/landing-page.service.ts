@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {InstagramImageDto} from './sections/insta-gallery/instagram-image.dto';
+import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
 import {environment} from '../../../environments/environment';
+import {LogoImageDto} from '../../core/dtos/log-image.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,32 @@ export class LandingPageService {
       return await response.json();
     } catch (error) {
       console.error('Erro no serviço Instagram:', error);
+      throw error;
+    }
+  }
+
+  async getCustomersLogos(): Promise<LogoImageDto[]> {
+    try {
+      const response = await fetch(this.apiUrl + '/customers');
+      if (!response.ok) {
+        throw new Error('Erro ao buscar logos dos clientes');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Erro no serviço de logos dos clientes:', error);
+      throw error;
+    }
+  }
+
+  async getCompanyLogos(): Promise<LogoImageDto[]> {
+    try {
+      const response = await fetch(this.apiUrl + '/utility-companies');
+      if (!response.ok) {
+        throw new Error('Erro ao buscar logos dos clientes');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Erro no serviço de logos dos clientes:', error);
       throw error;
     }
   }

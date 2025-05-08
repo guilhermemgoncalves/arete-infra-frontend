@@ -21,7 +21,6 @@ export class ImageUploaderComponent {
       formData.append(`file${index}`, file);
     });
 
-    console.log(formData);
     this.uploadService.uploadImages(formData).subscribe();
 
   }
