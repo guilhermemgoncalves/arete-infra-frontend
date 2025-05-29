@@ -1,0 +1,31 @@
+#contacts{
+  background: #121A1A;
+}
+
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 20px;
+
+  .footer-title{
+    color: #9F9F9F;
+    font-size: 20px;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.footer-item{
+  padding: 4px 0;
+}
+
+a{
+  color: #F5F5F5;
+  text-decoration: none;
+  display: block;
+  &:hover{
+    text-decoration: underline;
+  }
+}

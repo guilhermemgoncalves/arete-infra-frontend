@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'stage',
+    path: '',
     loadComponent: () =>
       import('./features/landing-page/landing-page.component').then(
         (m) => m.LandingPageComponent
@@ -16,7 +16,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: '',
+    path: 'login',
     loadComponent: () =>
       import('./core/components/coming-soon/coming-soon.component').then(
         (m) => m.ComingSoonComponent
