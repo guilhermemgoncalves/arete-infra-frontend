@@ -1,10 +1,11 @@
 import {Component, HostListener, Renderer2, ElementRef} from '@angular/core';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-header',
   imports: [
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
@@ -17,8 +18,11 @@ export class HeaderComponent {
     { label: 'Serviços', sectionId: 'services' },
     { label: 'Galeria', sectionId: 'insta-gallery' }
   ];
+  isMobile = false;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+    this.checkMobileView();
+  }
 
   navigateToSection(sectionId: string): void {
     const section = document.getElementById(sectionId);
@@ -58,5 +62,14 @@ export class HeaderComponent {
     if (target.classList.contains('nav-link') || target.classList.contains('whatsapp-icon')) {
       this.renderer.setStyle(target, 'cursor', 'pointer');
     }
+  }
+
+  @HostListener('window:resize', [])
+  onResize(): void {
+    this.checkMobileView();
+  }
+
+  private checkMobileView(): void {
+    this.isMobile = window.innerWidth <= 768;
   }
 }

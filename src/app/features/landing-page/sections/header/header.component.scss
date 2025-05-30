@@ -12,6 +12,32 @@
   height: 90px;
   padding: 5px 20px; // Adicionado pequeno padding
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Adicionada sombra padrão
+
+  &.mobile {
+    justify-content: center;
+    height: 70px;
+    padding: 0;
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav, .whatsapp-link {
+      display: none;
+    }
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 }
 
 .navbar.shrink {
@@ -64,3 +90,12 @@
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    &.mobile {
+      display: flex;
+    }
+  }
+}
+
