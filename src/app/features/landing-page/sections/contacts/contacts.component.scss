@@ -5,23 +5,23 @@
 .footer-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start; // Alinha os itens ao início horizontalmente
+  justify-content: space-between;
   align-items: flex-start; // Alinha os itens ao início verticalmente
-  padding: 10px; // Reduz o padding
+  padding: 20px 20px;
 
   .footer-title {
     color: #9F9F9F;
-    font-size: 18px; // Reduz o tamanho da fonte
+    font-size: 20px;
     font-weight: lighter;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: left; // Garante que o texto esteja alinhado à esquerda
   }
 }
 
 .footer-item {
-  padding: 2px 0; // Reduz o padding
-  text-align: left;
+  padding: 4px 0;
+  text-align: left; // Garante que os links estejam alinhados à esquerda
 }
 
 a {
