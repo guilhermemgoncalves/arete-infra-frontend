@@ -8,6 +8,7 @@ import {Meta, Title} from '@angular/platform-browser';
 import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
 import {LandingPageService} from './landing-page.service';
 import {LogoImageDto} from '../../core/dtos/log-image.dto';
+import {HeaderComponent} from './sections/header/header.component';
 
 
 
@@ -19,6 +20,7 @@ import {LogoImageDto} from '../../core/dtos/log-image.dto';
     UtilityCompaniesComponent,
     ServicesComponent,
     InstaGalleryComponent,
+    HeaderComponent,
   ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']

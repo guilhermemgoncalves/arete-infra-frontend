@@ -1,0 +1,63 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121A1A; // bg-dark
+  color: #fff; // text-white
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: height 0.3s ease, padding 0.3s ease;
+  height: 90px;
+  padding: 5px 20px; // Adicionado pequeno padding
+}
+
+.navbar.shrink {
+  height: 60px;
+  padding: 5px 15px; // Adicionado pequeno padding
+}
+
+.logo {
+  transition: all 0.3s ease;
+  height: 70%;
+  max-height: 65px;
+  width: auto;
+}
+
+.navbar.shrink .logo {
+  height: 60%;
+  max-height: 50px;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #fff; // text-white
+  text-decoration: none;
+  transition: font-size 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar.shrink .nav-link {
+  font-size: 0.9rem;
+}
+
+.whatsapp-link {
+  display: flex;
+  align-items: center;
+  color: #fff; // text-white
+  text-decoration: none;
+}
+
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
