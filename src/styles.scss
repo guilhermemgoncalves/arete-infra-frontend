@@ -100,6 +100,13 @@ li {
   padding-bottom: 5px;
 }
 
+.section-description {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--text-color-dark);
+  margin-bottom: 20px;
+}
+
 .section-divider {
   border: none;
   border-top: 2px solid var(--text-color-dark);
@@ -109,4 +116,17 @@ li {
   opacity: 0.5;
 }
 
+// Customização para o container-xxl
+.container-xxl {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+// Opcional: Se quiser limitar a largura máxima
+@media (min-width: 1400px) {
+  .container-xxl {
+    max-width: 1600px; // Ajuste o valor conforme necessário
+  }
+}
 
