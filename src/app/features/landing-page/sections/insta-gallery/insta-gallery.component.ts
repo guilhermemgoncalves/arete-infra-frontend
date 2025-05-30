@@ -21,3 +21,4 @@ export class InstaGalleryComponent {
 
   images = input.required<Array<InstagramImageDto>>()
 }
+
