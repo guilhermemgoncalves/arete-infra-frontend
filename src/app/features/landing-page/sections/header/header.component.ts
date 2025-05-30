@@ -1,22 +1,32 @@
 import {Component, HostListener, Renderer2, ElementRef} from '@angular/core';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  navItems = [
+    { label: 'Home', sectionId: 'video-presentation' },
+    { label: 'Clientes', sectionId: 'customers' },
+    { label: 'Concessionárias', sectionId: 'utility-companies' },
+    { label: 'Serviços', sectionId: 'services' },
+    { label: 'Galeria', sectionId: 'insta-gallery' }
+  ];
+
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   navigateToSection(sectionId: string): void {
     const section = document.getElementById(sectionId);
     if (section) {
-      const offset = 55; // Ajuste para compensar a altura da navbar
+      const offset = 55;
       const currentScroll = window.scrollY || document.documentElement.scrollTop;
       const targetPosition = section.getBoundingClientRect().top + currentScroll - offset;
 
-      // Verifica se já está na posição desejada
       if (Math.abs(currentScroll - targetPosition) <= 5) {
         return;
       }

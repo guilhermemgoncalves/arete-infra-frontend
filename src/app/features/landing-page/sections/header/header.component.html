@@ -1,26 +1,14 @@
 <header class="navbar">
   <!-- Logo à esquerda -->
   <div>
-    <img src="assets/images/logo/logo_full-white.png" alt="Logo" class="logo">
+    <img src="assets/images/logo/arete-icon.svg" alt="Logo" class="logo">
   </div>
 
   <!-- Navegação no centro -->
   <nav>
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" (click)="navigateToSection('video-presentation')">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="navigateToSection('customers')">Clientes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="navigateToSection('utility-companies')">Concessionárias</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="navigateToSection('services')">Serviços</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="navigateToSection('insta-gallery')">Galeria</a>
+      <li class="nav-item" *ngFor="let item of navItems">
+        <a class="nav-link" (click)="navigateToSection(item.sectionId)">{{ item.label }}</a>
       </li>
     </ul>
   </nav>

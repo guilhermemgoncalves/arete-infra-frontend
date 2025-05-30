@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #121A1A; // bg-dark
+  background: #121a1a; // bg-dark
   color: #fff; // text-white
   position: fixed;
   top: 0;
@@ -11,11 +11,13 @@
   transition: height 0.3s ease, padding 0.3s ease;
   height: 90px;
   padding: 5px 20px; // Adicionado pequeno padding
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Adicionada sombra padrão
 }
 
 .navbar.shrink {
   height: 60px;
   padding: 5px 15px; // Adicionado pequeno padding
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); // Sombra mais intensa no estado "shrink"
 }
 
 .logo {
@@ -23,6 +25,7 @@
   height: 70%;
   max-height: 65px;
   width: auto;
+  cursor: pointer;
 }
 
 .navbar.shrink .logo {
