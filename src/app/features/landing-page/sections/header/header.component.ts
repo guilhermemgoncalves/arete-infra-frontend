@@ -44,6 +44,10 @@ export class HeaderComponent {
     }
   }
 
+  reloadHomePage(): void {
+    window.location.href = '/';
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;

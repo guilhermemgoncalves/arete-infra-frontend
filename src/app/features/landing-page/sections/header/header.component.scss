@@ -49,14 +49,14 @@
 .logo {
   transition: all 0.3s ease;
   height: 70%;
-  max-height: 65px;
+  max-height: 55px; // Reduzido de 65px para 55px
   width: auto;
   cursor: pointer;
 }
 
 .navbar.shrink .logo {
   height: 60%;
-  max-height: 50px;
+  max-height: 45px; // Reduzido de 50px para 45px
 }
 
 .nav {
@@ -98,4 +98,3 @@
     }
   }
 }
-
