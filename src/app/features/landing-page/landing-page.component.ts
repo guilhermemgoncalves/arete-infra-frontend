@@ -43,7 +43,7 @@ export class LandingPageComponent {
 
 
   private fetchInstagramImages(): void {
-    this.landingPageService.getInstaGallery().then(images => {
+    this.landingPageService.getInstaGalleryMock().then(images => {
       this.instagramImages.set(images);
     }).catch(error => {
       console.error('Erro ao carregar imagens:', error);
@@ -52,7 +52,7 @@ export class LandingPageComponent {
   }
 
   private fetchCustomersLogos(): void {
-    this.landingPageService.getCustomersLogos().then(logos => {
+    this.landingPageService.getCustomersLogosMock().then(logos => {
       this.customersLogos.set(logos);
     }).catch(error => {
       console.error('Erro ao carregar logos:', error);
@@ -60,7 +60,7 @@ export class LandingPageComponent {
     });
   }
   private fetchCompanyLogos(): void {
-    this.landingPageService.getCompanyLogos().then(logos => {
+    this.landingPageService.getCompanyLogosMock().then(logos => {
       this.companyLogos.set(logos);
     }).catch(error => {
       console.error('Erro ao carregar logos:', error);
