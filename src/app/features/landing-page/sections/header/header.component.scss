@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #121a1a; // bg-dark
-  color: #fff; // text-white
+  color: #121a1a; // bg-dark
+  background: #f5f5f5; // text-white
   position: fixed;
   top: 0;
   width: 100%;
@@ -42,21 +42,21 @@
 
 .navbar.shrink {
   height: 60px;
-  padding: 5px 15px; // Adicionado pequeno padding
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); // Sombra mais intensa no estado "shrink"
+  padding: 5px 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
   transition: all 0.3s ease;
   height: 70%;
-  max-height: 55px; // Reduzido de 65px para 55px
+  max-height: 80px; // Reduzido de 65px para 55px
   width: auto;
   cursor: pointer;
 }
 
 .navbar.shrink .logo {
-  height: 60%;
-  max-height: 45px; // Reduzido de 50px para 45px
+  height: 70%;
+  max-height: 50px; // Reduzido de 50px para 45px
 }
 
 .nav {
@@ -66,7 +66,7 @@
 
 .nav-link {
   font-size: 1rem;
-  color: #fff; // text-white
+  color: #121a1a; // text-white
   text-decoration: none;
   transition: font-size 0.3s ease;
   cursor: pointer;
@@ -74,21 +74,6 @@
 
 .navbar.shrink .nav-link {
   font-size: 0.9rem;
-}
-
-.whatsapp-link {
-  display: flex;
-  align-items: center;
-  color: #fff; // text-white
-  text-decoration: none;
-}
-
-.whatsapp-icon {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-  transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 @media (max-width: 768px) {

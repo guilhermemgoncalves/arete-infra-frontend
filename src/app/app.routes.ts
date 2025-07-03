@@ -22,4 +22,11 @@ export const routes: Routes = [
         (m) => m.ComingSoonComponent
       ),
   },
+  {
+    path: 'contacts',
+    loadComponent: () =>
+      import('./core/components/coming-soon/coming-soon.component').then(
+        (m) => m.ComingSoonComponent
+      ),
+  },
 ];

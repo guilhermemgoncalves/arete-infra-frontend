@@ -1,27 +1,40 @@
-import {Component, HostListener, Renderer2, ElementRef} from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
+import {Component, HostListener, Renderer2, ElementRef, inject} from '@angular/core';
+import {NgForOf} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   imports: [
-    NgForOf,
-    NgIf
+    NgForOf
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+  private readonly router = inject(Router);
+
   navItems = [
-    { label: 'Home', sectionId: 'video-presentation' },
-    { label: 'Clientes', sectionId: 'customers' },
-    { label: 'Concessionárias', sectionId: 'utility-companies' },
-    { label: 'Serviços', sectionId: 'services' },
-    { label: 'Galeria', sectionId: 'insta-gallery' }
+    {label: 'Home', sectionId: 'video-presentation'},
+    {label: 'Clientes', sectionId: 'customers'},
+    {label: 'Concessionárias', sectionId: 'utility-companies'},
+    {label: 'Atuação', sectionId: 'services'},
+    {label: 'Galeria', sectionId: 'insta-gallery'},
+    {label: 'Contato', sectionId: 'contacts', type: 'navigation'},
+    {label: 'Area interna', sectionId: 'login', type: 'navigation'},
   ];
   isMobile = false;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
     this.checkMobileView();
+  }
+
+  navigate(section: any): void {
+    if (section.type === 'navigation') {
+      this.router.navigate([section.sectionId]);
+    } else {
+      this.navigateToSection(section.sectionId);
+    }
   }
 
   navigateToSection(sectionId: string): void {
@@ -35,14 +48,15 @@ export class HeaderComponent {
         return;
       }
 
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({behavior: 'smooth'});
       setTimeout(() => {
         if (Math.abs(currentScroll - targetPosition) > 5) {
-          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          window.scrollTo({top: targetPosition, behavior: 'smooth'});
         }
       }, 600);
     }
   }
+
 
   reloadHomePage(): void {
     window.location.href = '/';

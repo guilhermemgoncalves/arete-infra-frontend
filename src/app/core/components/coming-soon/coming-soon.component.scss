@@ -1,5 +1,6 @@
 .coming-soon-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -8,4 +9,11 @@
 
 h1 {
   font-size: 4rem;
+}
+
+
+.back-home-anchor{
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
 }
