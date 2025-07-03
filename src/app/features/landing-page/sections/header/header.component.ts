@@ -21,7 +21,7 @@ export class HeaderComponent {
     {label: 'Atuação', sectionId: 'services'},
     {label: 'Galeria', sectionId: 'insta-gallery'},
     {label: 'Contato', sectionId: 'contacts', type: 'navigation'},
-    {label: 'Area interna', sectionId: 'login', type: 'navigation'},
+    {label: 'Área interna', sectionId: 'login', type: 'navigation'},
   ];
   isMobile = false;
 
