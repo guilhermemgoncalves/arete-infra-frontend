@@ -70,6 +70,7 @@
   text-decoration: none;
   transition: font-size 0.3s ease;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .navbar.shrink .nav-link {
@@ -83,3 +84,4 @@
     }
   }
 }
+

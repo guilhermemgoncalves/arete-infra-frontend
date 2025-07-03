@@ -1,13 +1,13 @@
 <header class="navbar" [class.mobile]="isMobile">
   <div class="header-container">
     <div class="logo-container">
-      <img src="assets/images/photos/instagram-profile/post4.png" alt="Logo" class="logo" (click)="reloadHomePage()">
+      <img src="assets/images/logo/LOGO_ARETE_RGBA_vz.png" alt="Logo" class="logo" (click)="reloadHomePage()">
     </div>
     @if (!isMobile){
       <nav>
         <ul class="nav">
           <li class="nav-item" *ngFor="let item of navItems">
-            <a class="nav-link" (click)="navigate(item)">{{ item.label }}</a>
+            <a class="nav-link nav-item" (click)="navigate(item)">{{ item.label }}</a>
           </li>
         </ul>
       </nav>
