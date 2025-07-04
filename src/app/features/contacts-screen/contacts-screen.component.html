@@ -1,1 +1,49 @@
-<app-coming-soon></app-coming-soon>
+<app-header></app-header>
+<section class="container-xxl">
+  <div class="contact-container">
+    <h1 class="contact-title">Entre em Contato</h1>
+    <p class="contact-description">Preencha o formulário abaixo e entraremos em contato com você o mais breve
+      possível.</p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <div class="form-group">
+        <label for="name">Nome:</label>
+        <input id="name" formControlName="name" type="text" class="form-control" placeholder="Digite seu nome"/>
+        <div class="error-message" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+          Nome é obrigatório.
+        </div>
+      </div>
+
+      <div class="form-group-row"> <!-- Mantém os controles lado a lado -->
+        <div class="form-group half-width">
+          <label for="email">Email:</label>
+          <input id="email" formControlName="email" type="email" class="form-control" placeholder="Digite seu email"/>
+          <div class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            Email inválido.
+          </div>
+        </div>
+
+        <div class="form-group half-width">
+          <label for="phone">Telefone/WhatsApp:</label>
+          <input id="phone" formControlName="phone" type="text" class="form-control" placeholder="Digite seu telefone"/>
+          <div class="error-message" *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+            Telefone é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensagem:</label>
+        <textarea id="message" formControlName="message" class="form-control"
+                  placeholder="Digite sua mensagem"></textarea>
+        <div class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+          Mensagem é obrigatória.
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="contactForm.invalid" class="btn-submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+</section>

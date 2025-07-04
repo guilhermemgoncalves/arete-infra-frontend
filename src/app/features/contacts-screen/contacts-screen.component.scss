@@ -1,0 +1,102 @@
+.contact-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent; // Fundo igual ao da página
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh; // Altura mínima para ocupar toda a tela
+}
+
+.contact-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-description {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; // Texto branco
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 15px; // Espaçamento entre os controles
+}
+
+.half-width {
+  flex: 1; // Cada controle ocupa metade da largura disponível
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff; // Labels brancas
+}
+
+.form-control {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #000; // Fundo preto
+  border: 1px solid #fff; // Borda branca
+  border-radius: 4px;
+  color: #fff; // Texto branco
+}
+
+.form-control::placeholder {
+  color: #ccc; // Placeholder cinza claro
+}
+
+.form-control:focus {
+  border-color: #ccc;
+  outline: none;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #d9534f;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit {
+  background-color: #000; // Fundo preto
+  color: #fff; // Texto branco
+  padding: 10px 20px;
+  border: 1px solid #fff; // Borda branca
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; // Largura total do formulário
+}
+
+.btn-submit:disabled {
+  background-color: #333; // Fundo preto mais claro para desabilitado
+  color: #ccc; // Texto cinza claro
+  border: 1px solid #ccc; // Borda cinza claro
+  cursor: not-allowed;
+}
+
+.btn-submit:hover {
+  opacity: 0.8; // Reduz a opacidade ao passar o mouse
+}
+

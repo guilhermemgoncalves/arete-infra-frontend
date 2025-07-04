@@ -25,8 +25,8 @@ export const routes: Routes = [
   {
     path: 'contacts',
     loadComponent: () =>
-      import('./core/components/coming-soon/coming-soon.component').then(
-        (m) => m.ComingSoonComponent
+      import('./features/contacts-screen/contacts-screen.component').then(
+        (m) => m.ContactsScreenComponent
       ),
   },
 ];
