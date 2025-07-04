@@ -10,9 +10,8 @@
   z-index: 1000;
   transition: height 0.3s ease, padding 0.3s ease;
   height: 90px;
-  padding: 5px 20px; // Adicionado pequeno padding
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Adicionada sombra padrão
-
+  padding: 5px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   &.mobile {
     justify-content: center;
     height: 70px;
@@ -49,14 +48,14 @@
 .logo {
   transition: all 0.3s ease;
   height: 70%;
-  max-height: 80px; // Reduzido de 65px para 55px
+  max-height: 80px;
   width: auto;
   cursor: pointer;
 }
 
 .navbar.shrink .logo {
   height: 70%;
-  max-height: 50px; // Reduzido de 50px para 45px
+  max-height: 50px;
 }
 
 .nav {
@@ -66,11 +65,12 @@
 
 .nav-link {
   font-size: 0.85rem;
-  color: #121a1a; // text-white
+  color: #16191b;
   text-decoration: none;
   transition: font-size 0.3s ease;
   cursor: pointer;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .navbar.shrink .nav-link {

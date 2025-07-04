@@ -2,7 +2,7 @@
 
 
 //Theming
-body{
+body {
   font-family: "Host Grotesk", sans-serif;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ body{
 
 body.light-theme {
   --background-color-light: #ffffff;
-  --text-color-light: #000000;
+  --text-color-light: #16191b;
 }
 
 body.light-theme {
@@ -76,7 +76,7 @@ li {
 
 
 //LANDING PAGE
-.landing-page-section{
+.landing-page-section {
   min-height: 100vh;
 }
 
@@ -96,7 +96,7 @@ li {
 .section-title {
   text-align: center;
   font-size: 3rem;
-  font-weight: normal;
+  font-weight: bold;
   padding-bottom: 5px;
   text-transform: uppercase;
 }
@@ -112,7 +112,7 @@ li {
   border: none;
   border-top: 2px solid var(--text-color-dark);
   width: 80%;
-  margin: 40px auto 0 auto ;
+  margin: 40px auto 0 auto;
   padding: 40px;
   opacity: 0.5;
 }
