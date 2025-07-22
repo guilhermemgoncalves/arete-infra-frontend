@@ -2,11 +2,11 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: transparent; // Fundo igual ao da página
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh; // Altura mínima para ocupar toda a tela
+  min-height: 100vh;
 }
 
 .contact-title {
@@ -14,13 +14,14 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
+  color: var(--color-light);
 }
 
 .contact-description {
   font-size: 16px;
   text-align: center;
   margin-bottom: 20px;
-  color: #fff; // Texto branco
+  color: #fff;
 }
 
 .contact-form {
@@ -36,31 +37,31 @@
 
 .form-group-row {
   display: flex;
-  gap: 15px; // Espaçamento entre os controles
+  gap: 15px;
 }
 
 .half-width {
-  flex: 1; // Cada controle ocupa metade da largura disponível
+  flex: 1;
 }
 
 label {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #fff; // Labels brancas
+  color: var(--color-light);
 }
 
 .form-control {
   padding: 10px;
   font-size: 14px;
-  background-color: #000; // Fundo preto
-  border: 1px solid #fff; // Borda branca
+  background-color: var(--background-color-dark);
+  border: var(--color-light) solid var(--color-light);
   border-radius: 4px;
-  color: #fff; // Texto branco
+  color: var(--color-light);
 }
 
 .form-control::placeholder {
-  color: #ccc; // Placeholder cinza claro
+  color: #ccc;
 }
 
 .form-control:focus {
@@ -80,23 +81,23 @@ label {
 }
 
 .btn-submit {
-  background-color: #000; // Fundo preto
-  color: #fff; // Texto branco
+  background-color: var(--color-primary-mid);
+  color: var(--color-light);
   padding: 10px 20px;
-  border: 1px solid #fff; // Borda branca
+  border: 1px var(--color-light);
   border-radius: 4px;
   cursor: pointer;
-  width: 100%; // Largura total do formulário
+  width: 100%;
 }
 
 .btn-submit:disabled {
-  background-color: #333; // Fundo preto mais claro para desabilitado
-  color: #ccc; // Texto cinza claro
-  border: 1px solid #ccc; // Borda cinza claro
+  background-color: #333;
+  color: #ccc;
+  border: 1px solid #ccc;
   cursor: not-allowed;
 }
 
 .btn-submit:hover {
-  opacity: 0.8; // Reduz a opacidade ao passar o mouse
+  opacity: 0.8;
 }
 

@@ -10,25 +10,16 @@ body {
 
 :root {
   --background-color-dark: rgb(8 9 11 / var(--tw-bg-opacity, 1));
-  --text-color-dark: #f6f6f6;
-  --text-color-primary-mid: #083934;
-  --text-color-primary-light: #17A697;
-  --text-color-gray-dark: #16191b;
+  --color-light: #f6f6f6;
+  --color-primary-dark: #041C1A;
+  --color-primary-mid: #083934;
+  --color-primary-light: #17A697;
+  --color-gray-dark: #16191b;
 }
 
-
-body.light-theme {
-  --background-color-light: #ffffff;
-  --text-color-light: #16191b;
-}
-
-body.light-theme {
-  background-color: var(--background-color-light);
-  color: var(--text-color-light);
-}
 
 body {
-  background-color: var(--background-color-dark);
+  background-color: var(--color-gray-dark);
   color: var(--text-color-dark);
 }
 
