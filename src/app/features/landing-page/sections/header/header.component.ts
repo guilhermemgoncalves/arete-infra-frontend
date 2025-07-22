@@ -1,6 +1,6 @@
 import {Component, HostListener, Renderer2, ElementRef, inject} from '@angular/core';
 import {NgForOf} from '@angular/common';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +12,8 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent {
 
+  private route$ = inject(ActivatedRoute);
+
   private readonly router = inject(Router);
 
   navItems = [
@@ -20,13 +22,29 @@ export class HeaderComponent {
     {label: 'Concessionárias', sectionId: 'utility-companies'},
     {label: 'Atuação', sectionId: 'services'},
     {label: 'Galeria', sectionId: 'insta-gallery'},
-    {label: 'Contato', sectionId: 'contacts', type: 'navigation'},
+    {label: 'Contato', sectionId: 'contato', type: 'navigation'},
     {label: 'Área interna', sectionId: 'login', type: 'navigation'},
   ];
   isMobile = false;
+  activeSection: string | null = null;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  constructor(private renderer: Renderer2, private el: ElementRef, private route: ActivatedRoute) {
     this.checkMobileView();
+    route.url.subscribe( data =>{
+      const segmentsName = data.map(segment => segment.path);
+
+      if(segmentsName.includes('contato')) {
+        this.activeSection = 'contato';
+      }
+
+      if(segmentsName.includes('login')) {
+        this.activeSection = 'login';
+      }
+
+
+    })
+
+
   }
 
   navigate(section: any): void {
@@ -57,7 +75,6 @@ export class HeaderComponent {
     }
   }
 
-
   reloadHomePage(): void {
     window.location.href = '/';
   }
@@ -73,6 +90,8 @@ export class HeaderComponent {
         this.renderer.removeClass(navbarElement, 'shrink');
       }
     }
+
+    this.updateActiveSection();
   }
 
   @HostListener('mouseover', ['$event.target'])
@@ -89,5 +108,27 @@ export class HeaderComponent {
 
   private checkMobileView(): void {
     this.isMobile = window.innerWidth <= 768;
+  }
+
+  private updateActiveSection(): void {
+    const sections = this.navItems.filter(item => !item.type).map(item => item.sectionId);
+
+
+    if (this.router.url.includes('contato')) {
+      this.activeSection = 'contato';
+      return;
+    }
+
+    for (const sectionId of sections) {
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        const rect = sectionElement.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          this.activeSection = sectionId;
+          return;
+        }
+      }
+    }
+    this.activeSection = null;
   }
 }

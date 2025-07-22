@@ -23,7 +23,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'contacts',
+    path: 'contato',
     loadComponent: () =>
       import('./features/contacts-screen/contacts-screen.component').then(
         (m) => m.ContactsScreenComponent
