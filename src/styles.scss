@@ -20,7 +20,7 @@ body {
 
 body {
   background-color: var(--color-gray-dark);
-  color: var(--text-color-dark);
+  color: var(--color-light);
 }
 
 //GENERAL
@@ -97,13 +97,13 @@ li {
 .section-description {
   text-align: center;
   font-size: 1.25rem;
-  color: var(--text-color-dark);
+  color: var(--color-light);
   margin-bottom: 20px;
 }
 
 .section-divider {
   border: none;
-  border-top: 2px solid var(--text-color-dark);
+  border-top: 2px solid var(--color-light);
   width: 80%;
   margin: 40px auto 0 auto;
   padding: 40px;
