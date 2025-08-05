@@ -2,7 +2,7 @@
 
 
 //Theming
-body{
+body {
   font-family: "Host Grotesk", sans-serif;
   margin: 0;
   padding: 0;
@@ -10,24 +10,17 @@ body{
 
 :root {
   --background-color-dark: rgb(8 9 11 / var(--tw-bg-opacity, 1));
-  --text-color-dark: #f6f6f6;
-
+  --color-light: #f6f6f6;
+  --color-primary-dark: #041C1A;
+  --color-primary-mid: #083934;
+  --color-primary-light: #17A697;
+  --color-gray-dark: #16191b;
 }
 
-
-body.light-theme {
-  --background-color-light: #ffffff;
-  --text-color-light: #000000;
-}
-
-body.light-theme {
-  background-color: var(--background-color-light);
-  color: var(--text-color-light);
-}
 
 body {
-  background-color: var(--background-color-dark);
-  color: var(--text-color-dark);
+  background-color: var(--color-gray-dark);
+  color: var(--color-light);
 }
 
 //GENERAL
@@ -76,7 +69,7 @@ li {
 
 
 //LANDING PAGE
-.landing-page-section{
+.landing-page-section {
   min-height: 100vh;
 }
 
@@ -96,7 +89,7 @@ li {
 .section-title {
   text-align: center;
   font-size: 3rem;
-  font-weight: normal;
+  font-weight: bold;
   padding-bottom: 5px;
   text-transform: uppercase;
 }
@@ -104,15 +97,15 @@ li {
 .section-description {
   text-align: center;
   font-size: 1.25rem;
-  color: var(--text-color-dark);
+  color: var(--color-light);
   margin-bottom: 20px;
 }
 
 .section-divider {
   border: none;
-  border-top: 2px solid var(--text-color-dark);
+  border-top: 2px solid var(--color-light);
   width: 80%;
-  margin: 40px auto 0 auto ;
+  margin: 40px auto 0 auto;
   padding: 40px;
   opacity: 0.5;
 }
