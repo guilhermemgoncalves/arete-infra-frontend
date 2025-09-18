@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
 import {environment} from '../../../environments/environment';
 import {LogoImageDto} from '../../core/dtos/log-image.dto';
@@ -11,11 +11,12 @@ export class LandingPageService {
   private apiUrl = environment.apiUrl;
 
 
-  constructor() { }
+  constructor() {
+  }
 
   async getInstaGallery(): Promise<InstagramImageDto[]> {
     try {
-      const response = await fetch(this.apiUrl+ '/insta-gallery', );
+      const response = await fetch(this.apiUrl + '/insta-gallery',);
       if (!response.ok) {
         throw new Error('Erro ao buscar imagens do Instagram');
       }
@@ -78,7 +79,46 @@ export class LandingPageService {
       {
         key: './assets/images/photos/concessionarias/6.png',
         description: 'saae logo'
+      }, {
+        key: './assets/images/photos/concessionarias/1.png',
+        description: 'sanasa logo'
       },
+      {
+        key: './assets/images/photos/concessionarias/7.png',
+        description: 'sanasa logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/3.png',
+        description: 'embasa logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/10.png',
+        description: 'brk ambiental logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/5.png',
+        description: 'deso logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/6.png',
+        description: 'saae logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/1.png',
+        description: 'sanasa logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/7.png',
+        description: 'sanasa logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/3.png',
+        description: 'embasa logo'
+      },
+      {
+        key: './assets/images/photos/concessionarias/10.png',
+        description: 'brk ambiental logo'
+      }
     ]
 
     return Promise.resolve(logos)
@@ -146,6 +186,10 @@ export class LandingPageService {
       {
         key: './assets/images/photos/clientes/5.png',
         description: 'AB Mais logo'
+      },
+      {
+        key: './assets/images/photos/clientes/1.png',
+        description: 'Teriva logo'
       },
     ]
 
