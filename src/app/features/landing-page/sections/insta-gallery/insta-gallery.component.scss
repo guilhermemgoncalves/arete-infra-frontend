@@ -4,8 +4,14 @@
   gap: 1rem;
   width: 100%;
   margin: 0 auto;
-  padding: 3rem 1rem;
   box-sizing: border-box;
+
+  padding: 70px ;
+  border: solid 0.5px var(--color-gray-mid);
+  border-radius: 3px;
+
+  background: #083934;
+  background: linear-gradient(rgba(46, 53, 57, 1) 5%, rgba(22, 25, 27, 1) 100%);
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
@@ -41,4 +47,8 @@
 .contacts {
   padding-top: 50px;
   text-align: center;
+}
+
+.section-title{
+  text-align: start;
 }

@@ -75,8 +75,7 @@ li {
 }
 
 .target {
-  width: 100%;
-  height: 200px;
+  display: block;
   opacity: 0;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
@@ -88,8 +87,7 @@ li {
 
 
 .section-title {
-  margin: 50px auto;
-  text-align: center;
+  margin: 40px auto;
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
