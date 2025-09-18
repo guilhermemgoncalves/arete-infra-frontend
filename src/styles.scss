@@ -3,7 +3,7 @@
 
 //Theming
 body {
-  font-family: "Host Grotesk", sans-serif;
+  font-family: "Raleway", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -15,6 +15,7 @@ body {
   --color-primary-mid: #083934;
   --color-primary-light: #17A697;
   --color-gray-dark: #16191b;
+  --color-gray-mid: #5D6A73;
 }
 
 
@@ -87,10 +88,10 @@ li {
 
 
 .section-title {
+  margin: 50px auto;
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
-  padding-bottom: 5px;
   text-transform: uppercase;
 }
 
@@ -98,7 +99,7 @@ li {
   text-align: center;
   font-size: 1.25rem;
   color: var(--color-light);
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .section-divider {
