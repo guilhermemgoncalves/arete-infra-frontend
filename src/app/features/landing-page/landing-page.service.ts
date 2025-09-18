@@ -108,9 +108,45 @@ export class LandingPageService {
         description: 'AB Mais logo'
       },
       {
-        key: './assets/images/photos/clientes/6.png',
-        description: 'Alphaville logo'
-      }
+        key: './assets/images/photos/clientes/1.png',
+        description: 'Teriva logo'
+      },
+      {
+        key: './assets/images/photos/clientes/2.png',
+        description: 'Longitude Incorporações logo'
+      },
+      {
+        key: './assets/images/photos/clientes/3.png',
+        description: 'Tallento logo'
+      },
+      {
+        key: './assets/images/photos/clientes/4.png',
+        description: 'Guepardo logo'
+      },
+      {
+        key: './assets/images/photos/clientes/5.png',
+        description: 'AB Mais logo'
+      },
+      {
+        key: './assets/images/photos/clientes/1.png',
+        description: 'Teriva logo'
+      },
+      {
+        key: './assets/images/photos/clientes/2.png',
+        description: 'Longitude Incorporações logo'
+      },
+      {
+        key: './assets/images/photos/clientes/3.png',
+        description: 'Tallento logo'
+      },
+      {
+        key: './assets/images/photos/clientes/4.png',
+        description: 'Guepardo logo'
+      },
+      {
+        key: './assets/images/photos/clientes/5.png',
+        description: 'AB Mais logo'
+      },
     ]
 
     return Promise.resolve(logos)
