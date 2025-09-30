@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import {Component, Input, input, signal} from '@angular/core';
 import {LogoImageDto} from '../../dtos/log-image.dto';
 import {ImageUrlDownloadPipe} from '../../pipes/image-url-download.pipe';
 
@@ -12,6 +12,11 @@ import {ImageUrlDownloadPipe} from '../../pipes/image-url-download.pipe';
 })
 export class GroupingLogoComponent {
 
+  @Input() columnsCount = signal(5);
+
   logos= input.required<Array<LogoImageDto>>();
 
+  get cssVar() {
+    return { '--logo-columns': this.columnsCount() };
+  }
 }

@@ -1,7 +1,7 @@
-<div class="logo-container">
+<div class="logo-container" [style]="cssVar">
   @for (logo of logos(); track logo) {
     <div class="logo-item">
-      <img [src]="logo.key | imageUrlDownload" alt="Customer Logo" />
+      <img [src]="logo.key | imageUrlDownload" alt="logo" />
     </div>
   }
 </div>
