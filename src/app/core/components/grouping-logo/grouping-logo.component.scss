@@ -4,7 +4,7 @@
 
 .logo-container {
   display: grid;
-  gap: 12px;
+  gap: 40px;
   grid-template-columns: repeat(5, 1fr); // fallback para browsers antigos
 
   @media (min-width: 768px) {

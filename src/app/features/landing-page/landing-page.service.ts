@@ -103,22 +103,6 @@ export class LandingPageService {
         key: './assets/images/photos/concessionarias/6.png',
         description: 'saae logo'
       },
-      {
-        key: './assets/images/photos/concessionarias/1.png',
-        description: 'sanasa logo'
-      },
-      {
-        key: './assets/images/photos/concessionarias/7.png',
-        description: 'sanasa logo'
-      },
-      {
-        key: './assets/images/photos/concessionarias/3.png',
-        description: 'embasa logo'
-      },
-      {
-        key: './assets/images/photos/concessionarias/10.png',
-        description: 'brk ambiental logo'
-      }
     ]
 
     return Promise.resolve(logos)
@@ -187,10 +171,7 @@ export class LandingPageService {
         key: './assets/images/photos/clientes/5.png',
         description: 'AB Mais logo'
       },
-      {
-        key: './assets/images/photos/clientes/1.png',
-        description: 'Teriva logo'
-      },
+
     ]
 
     return Promise.resolve(logos)
