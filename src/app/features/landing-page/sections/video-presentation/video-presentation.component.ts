@@ -9,8 +9,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class VideoPresentationComponent {
 
-  url = 'https://www.youtube.com/embed/Dh7HJdPKVaY?si=0jBvFFZRrhND01Ae' +
-    '?modesbranding=1&rel=0&showinfo=0&autoplay=1&mute=1&cc_load_policy=0&loop=1';
+  url = 'https://player.vimeo.com/video/1123062036?autoplay=1&loop=1&muted=1&background=1';
   safeUrl
 
   constructor(private sanitizer: DomSanitizer) {

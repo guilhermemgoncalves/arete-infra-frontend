@@ -8,7 +8,7 @@
 
   padding: 70px ;
   border: solid 0.5px var(--color-gray-mid);
-  border-radius: 3px;
+  border-radius: 5px;
 
   background: #083934;
   background: linear-gradient(rgba(46, 53, 57, 1) 5%, rgba(22, 25, 27, 1) 100%);
@@ -41,14 +41,9 @@
 
 #insta-gallery {
   margin-bottom: 3rem;
-  min-height: 100vh;
 }
 
 .contacts {
   padding-top: 50px;
   text-align: center;
-}
-
-.section-title{
-  text-align: start;
 }

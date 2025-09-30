@@ -1,16 +1,15 @@
-<section id="services" class="landing-page-section" fadeInOnScroll>
-  <h1 class="section-title">Atuação</h1>
+<section id="services" class="container-xxl">
+  <h1 class="section-title">Atuação </h1>
   <div class="services-container">
+    <div [innerHTML]="servicesText" class="text" style="font-size: 1.2em; margin-top: 2em;"></div>
     <div class="images">
       <div class="image-item">
-        <img src="assets/images/photos/people/people1.png" alt="Imagem 1" />
+        <img src="assets/images/photos/people/people1.png" alt="Imagem 1"/>
       </div>
       <div class="image-item">
-        <img src="assets/images/photos/people/people2.png" alt="Imagem 2" />
+        <img src="assets/images/photos/people/people2.png" alt="Imagem 2"/>
       </div>
     </div>
-    <div [innerHTML]="servicesText" class="text" style="font-size: 1.2em; margin-top: 2em;">
-    </div>
   </div>
-  <hr class="section-divider" />
+  <div></div>
 </section>
