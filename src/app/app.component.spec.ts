@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'arete-infra-frontend' title`, () => {
+  it(`should have the 'arete-alternative' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('arete-infra-frontend');
+    expect(app.title).toEqual('arete-alternative');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, arete-infra-frontend');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, arete-alternative');
   });
 });

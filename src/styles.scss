@@ -3,7 +3,7 @@
 
 //Theming
 body {
-  font-family: "Host Grotesk", sans-serif;
+  font-family: "Raleway", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -15,6 +15,7 @@ body {
   --color-primary-mid: #083934;
   --color-primary-light: #17A697;
   --color-gray-dark: #16191b;
+  --color-gray-mid: #5D6A73;
 }
 
 
@@ -74,8 +75,7 @@ li {
 }
 
 .target {
-  width: 100%;
-  height: 200px;
+  display: block;
   opacity: 0;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
@@ -87,40 +87,36 @@ li {
 
 
 .section-title {
-  text-align: center;
+  margin: 40px auto;
+  padding: 40px 0 0 0;
   font-size: 3rem;
   font-weight: bold;
-  padding-bottom: 5px;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin: 20px auto;
+  }
 }
+
 
 .section-description {
   text-align: center;
   font-size: 1.25rem;
   color: var(--color-light);
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
-.section-divider {
-  border: none;
-  border-top: 2px solid var(--color-light);
-  width: 80%;
-  margin: 40px auto 0 auto;
-  padding: 40px;
-  opacity: 0.5;
-}
 
-// Customização para o container-xxl
 .container-xxl {
   max-width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-// Opcional: Se quiser limitar a largura máxima
 @media (min-width: 1400px) {
   .container-xxl {
-    max-width: 1600px; // Ajuste o valor conforme necessário
+    max-width: 1600px;
   }
 }
 

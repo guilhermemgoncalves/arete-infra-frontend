@@ -1,5 +1,5 @@
 export interface InstagramImageDto {
-  description: string;
   key: string;
+  description: string;
   link: string;
 }

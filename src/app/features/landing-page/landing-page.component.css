@@ -1,0 +1,9 @@
+.landing-page {
+  background-color: var(--color-gray-dark);
+  color: var(--color-light);
+  overflow-x: hidden;
+}
+
+.debug-section {
+  display: none; /* Hide debug shell */
+}

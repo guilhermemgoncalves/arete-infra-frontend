@@ -1,0 +1,63 @@
+<div class="builder-container">
+  <h2>Criar Formulário</h2>
+
+  <!-- Criar nova questão -->
+  <div class="question-form">
+    <label>
+      Pergunta:
+      <input [(ngModel)]="newQuestion.label" placeholder="Digite o enunciado" />
+    </label>
+
+    <label>
+      Tipo:
+      <select [(ngModel)]="newQuestion.type">
+        <option value="text">Texto</option>
+        <option value="select">Dropdown</option>
+        <option value="checkbox">Checkbox</option>
+        <option value="radio">Múltipla Escolha</option>
+      </select>
+    </label>
+
+    <label *ngIf="showOptionsInput()">
+      Opções (separadas por vírgula):
+      <input (input)="updateOptions($event)" placeholder="Ex: Azul, Verde, Vermelho" />
+    </label>
+
+    <label>
+      <input type="checkbox" [(ngModel)]="newQuestion.required" />
+      Obrigatória
+    </label>
+
+    <button (click)="addQuestion()">Adicionar Pergunta</button>
+  </div>
+
+  <hr />
+
+  <!-- Lista de perguntas já criadas -->
+  <div class="questions-list">
+    <h3>Perguntas Criadas</h3>
+    <div *ngFor="let q of questions" class="question-item">
+      <strong>{{ q.label }}</strong>
+      <span *ngIf="q.required" class="required">*</span>
+      <div [ngSwitch]="q.type">
+        <input *ngSwitchCase="'text'" type="text" placeholder="Resposta..." />
+
+        <select *ngSwitchCase="'select'">
+          <option *ngFor="let opt of q.options">{{ opt }}</option>
+        </select>
+
+        <div *ngSwitchCase="'checkbox'">
+          <label *ngFor="let opt of q.options">
+            <input type="checkbox" /> {{ opt }}
+          </label>
+        </div>
+
+        <div *ngSwitchCase="'radio'">
+          <label *ngFor="let opt of q.options">
+            <input type="radio" name="q{{ q.id }}" /> {{ opt }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

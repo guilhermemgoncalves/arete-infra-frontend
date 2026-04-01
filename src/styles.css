@@ -1,0 +1,102 @@
+/* -------------------------------------------------------------------------- */
+/* RESET & FOUNDATION                                                         */
+/* -------------------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  /* Arete Palette (HSL for flexibility) */
+  --color-primary-dark: #041C1A;
+  --color-primary-light: #17A697;
+  --color-gray-dark: #08090b;
+  --color-gray-med: #16191b;
+  --color-light: #fefefe;
+  
+  /* Bugatti Typography */
+  --font-main: 'Montserrat', sans-serif;
+  --tracking-wide: 0.35em;
+  --tracking-extra: 0.5em;
+  
+  /* Layout */
+  --container-max: 1400px;
+  --section-padding: 120px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-main);
+  background-color: var(--color-gray-dark);
+}
+
+body {
+  background-color: var(--color-gray-dark);
+  color: var(--color-light);
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------------- */
+/* UTILITIES                                                                  */
+/* -------------------------------------------------------------------------- */
+
+.lp-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-primary-light);
+  text-align: center;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.section-title.left {
+  text-align: left;
+  margin-inline: 0;
+}
+
+.section-subtitle {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: var(--tracking-extra);
+  color: #fff;
+  opacity: 0.3;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/* REUSABLE STYLES                                                            */
+/* -------------------------------------------------------------------------- */
+
+.glass-badge {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ANIMATIONS                                                                 */
+/* -------------------------------------------------------------------------- */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
