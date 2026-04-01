@@ -1,7 +1,47 @@
-<app-header></app-header>
-<video-presentation></video-presentation>
-<customers [customersLogos]="customersLogos()"></customers>
-<utility-companies [companyLogos]="companyLogos()"></utility-companies>
-<services></services>
-<insta-gallery [images]="instagramImages()"></insta-gallery>
+<div class="landing-page">
+  <app-header></app-header>
+  
+  <app-hero></app-hero>
 
+  @defer (on viewport) {
+    <app-brand-grid 
+      id="clientes"
+      title="CLIENTES" 
+      subtitle="Parceiros de Excelência em Engenharia"
+      [logos]="customers()"
+      background="linear-gradient(135deg, #1d102e 0%, #08090b 100%)">
+    </app-brand-grid>
+  } @placeholder {
+    <div style="height: 400px; background: #08090b;"></div>
+  }
+
+  @defer (on viewport) {
+    <app-brand-grid 
+      id="concessionarias"
+      title="CONCESSIONÁRIAS" 
+      subtitle="Validação e Homologação de Projetos de Infraestrutura"
+      [logos]="concessionarias()"
+      background="linear-gradient(135deg, #0d2e2a 0%, #08090b 100%)">
+    </app-brand-grid>
+  } @placeholder {
+    <div style="height: 400px; background: #08090b;"></div>
+  }
+
+  <app-action-section id="atuacao"></app-action-section>
+
+  @defer (on viewport) {
+    <app-gallery id="galeria" [posts]="instagramPosts()"></app-gallery>
+  } @placeholder {
+    <div style="height: 600px; background: #080808;"></div>
+  }
+
+  <footer style="padding: 100px 0; background: #000; text-align: center; border-top: 1px solid #111; font-family: 'Raleway', sans-serif;">
+    <div style="display: flex; gap: 3rem; justify-content: center; margin-bottom: 3rem;">
+      <a href="https://www.instagram.com/arete_infra/" target="_blank" style="color: #666; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em; transition: color 0.3s ease;">INSTAGRAM</a>
+      <a href="https://www.linkedin.com/company/areteinfra/" target="_blank" style="color: #666; text-decoration: none; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em; transition: color 0.3s ease;">LINKEDIN</a>
+    </div>
+    <p style="color: #333; font-size: 0.75rem; letter-spacing: 0.25em; font-weight: 700;">
+      © 2026 ARETÉ INFRA - EXCELÊNCIA EM ENGENHARIA
+    </p>
+  </footer>
+</div>

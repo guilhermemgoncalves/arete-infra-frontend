@@ -1,0 +1,86 @@
+<section class="contact-section">
+  <div class="background-overlay"></div>
+  
+  <div class="content-wrapper lp-container">
+    <header class="contact-header">
+      <div class="logo-back" (click)="goBack()">
+        <img src="/assets/images/logo/logo_full-white.png" alt="Arete Infra Logo" class="brand-logo" />
+        <span class="back-text">VOLTAR PARA HOME</span>
+      </div>
+      
+      <h1 class="main-title">FALE COM UM ESPECIALISTA</h1>
+      <p class="subtitle">Transforme sua infraestrutura com a excelência da boutique de engenharia Arete.</p>
+    </header>
+
+    <div class="grid-layout">
+      <div class="form-container" [class.success-state]="showSuccess()">
+        @if (!showSuccess()) {
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="arete-form">
+            <div class="form-group">
+              <label for="nome">NOME COMPLETO</label>
+              <input type="text" id="nome" formControlName="nome" placeholder="Seu nome" [class.error]="contactForm.get('nome')?.touched && contactForm.get('nome')?.invalid" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-MAIL CORPORATIVO</label>
+              <input type="email" id="email" formControlName="email" placeholder="exemplo@empresa.com.br" [class.error]="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" />
+            </div>
+
+            <div class="form-group">
+              <label for="assunto">ASSUNTO</label>
+              <select id="assunto" formControlName="assunto">
+                <option value="">Selecione o serviço</option>
+                <option value="Dimensionamento">Dimensionamento de Redes</option>
+                <option value="Projeto">Projeto Conceitual/Executivo</option>
+                <option value="Validação">Validação em Concessionárias</option>
+                <option value="Consultoria">Consultoria Técnica</option>
+                <option value="Elevatória">Estação Elevatória</option>
+                <option value="Outros">Outros</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">MENSAGEM (DESCRIÇÃO DO LEGADO)</label>
+              <textarea id="mensagem" formControlName="mensagem" rows="5" placeholder="Descreva brevemente sua necessidade técnica..."></textarea>
+            </div>
+
+            <div class="form-footer">
+              <button type="submit" class="submit-btn" [disabled]="contactForm.invalid" style="width: 100%;">
+                ENVIAR
+              </button>
+            </div>
+          </form>
+        } @else {
+          <div class="success-message">
+            <div class="success-icon">✓</div>
+            <h3>MENSAGEM PREPARADA</h3>
+            <p>Seu cliente de e-mail foi aberto com todos os detalhes técnicos. Revise e envie para nossos especialistas.</p>
+            <button class="back-btn" (click)="goBack()">RETORNAR AO PORTFÓLIO</button>
+          </div>
+        }
+      </div>
+
+      <div class="info-container">
+        <div class="info-block">
+          <h4>BOUTIQUE DE ENGENHARIA</h4>
+          <p>Especialistas em infraestrutura de alto desempenho e conformidade normativa rigorosa.</p>
+        </div>
+
+        <div class="info-block">
+          <h4>SEDE ADMINISTRATIVA</h4>
+          <p>Campinas, SP<br>Brasil</p>
+        </div>
+
+        <div class="info-block">
+          <h4>CONTATO DIRETO</h4>
+          <p>contato&#64;areteinfra.com.br<br>+55 (11) 4003-ARETE</p>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/arete_infra/" target="_blank" class="social-link">INSTAGRAM</a>
+          <a href="https://www.linkedin.com/company/areteinfra/" target="_blank" class="social-link">LINKEDIN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

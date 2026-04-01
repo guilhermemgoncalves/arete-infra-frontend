@@ -1,84 +1,48 @@
-import {Component, signal} from '@angular/core';
-import {VideoPresentationComponent} from './sections/video-presentation/video-presentation.component';
-import {CustomersComponent} from './sections/customers/customers.component';
-import {UtilityCompaniesComponent} from './sections/utility-companies/utility-companies.component';
-import {ServicesComponent} from './sections/services/services.component';
-import {InstaGalleryComponent} from './sections/insta-gallery/insta-gallery.component';
-import {Meta, Title} from '@angular/platform-browser';
-import {InstagramImageDto} from '../../core/dtos/instagram-image.dto';
-import {LandingPageService} from './landing-page.service';
-import {LogoImageDto} from '../../core/dtos/log-image.dto';
-import {HeaderComponent} from './sections/header/header.component';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LandingPageService } from '../../core/services/landing-page.service';
+import { LogoImageDto } from '../../core/dtos/log-image.dto';
+import { InstagramImageDto } from '../../core/dtos/instagram-image.dto';
 
-
+import { HeaderComponent } from './components/header/header.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { BrandGridComponent } from './components/brand-grid/brand-grid.component';
+import { ActionSectionComponent } from './components/action-section/action-section.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @Component({
-  selector: 'landing-page',
+  selector: 'app-landing-page',
+  standalone: true,
   imports: [
-    VideoPresentationComponent,
-    CustomersComponent,
-    UtilityCompaniesComponent,
-    ServicesComponent,
-    InstaGalleryComponent,
+    CommonModule,
     HeaderComponent,
+    HeroComponent,
+    BrandGridComponent,
+    ActionSectionComponent,
+    GalleryComponent
   ],
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.scss']
+  styleUrl: './landing-page.component.css'
 })
-export class LandingPageComponent {
-  instagramImages = signal<Array<InstagramImageDto>>([]);
-  customersLogos = signal<Array<LogoImageDto>>([]);
-  companyLogos = signal<Array<LogoImageDto>>([]);
+export class LandingPageComponent implements OnInit {
+  private landingPageService = inject(LandingPageService);
 
-  constructor(
-    private metaService: Meta,
-    private titleService: Title,
-    private landingPageService: LandingPageService
-  ) {
-    this.fetchInstagramImages();
-    this.fetchCustomersLogos();
-    this.fetchCompanyLogos();
-    this.updateMetaTags();
+  customers = signal<LogoImageDto[]>([]);
+  concessionarias = signal<LogoImageDto[]>([]);
+  instagramPosts = signal<InstagramImageDto[]>([]);
+
+  ngOnInit() {
+    this.loadData();
   }
 
-
-  private fetchInstagramImages(): void {
-    this.landingPageService.getInstaGalleryMock().then(images => {
-      this.instagramImages.set(images);
-    }).catch(error => {
-      console.error('Erro ao carregar imagens:', error);
-      this.instagramImages.set([]);
-    });
-  }
-
-  private fetchCustomersLogos(): void {
-    this.landingPageService.getCustomersLogosMock().then(logos => {
-      this.customersLogos.set(logos);
-    }).catch(error => {
-      console.error('Erro ao carregar logos:', error);
-      this.customersLogos.set([]);
-    });
-  }
-  private fetchCompanyLogos(): void {
-    this.landingPageService.getCompanyLogosMock().then(logos => {
-      this.companyLogos.set(logos);
-    }).catch(error => {
-      console.error('Erro ao carregar logos:', error);
-      this.companyLogos.set([]);
-    });
-  }
-
-
-  private updateMetaTags() {
-    this.titleService.setTitle('Areté - Landing Page');
-    this.metaService.updateTag({name: 'description', content: 'Areté infraestrutura landing page'});
-    this.metaService.updateTag({
-      name: 'keywords',
-      content: 'areté, infraestrutura, areté-infra, engenharia, saneamento, esgoto, pluviais, portifólio, ' +
-        'estação elevatória, agua, Construção civil, obras públicas, urbanismo, hidráulica, tratamento de água, ' +
-        'tratamento de esgoto, drenagem urbana, recursos hídricos, rede de abastecimento, eficiência hídrica, ' +
-        'meio ambiente, sustentabilidade, projetos estruturais, infraestrutura urbana, engenharia ambiental, ' +
-        'sistemas de bombeamento, reservatórios, tubulações, gestão de resíduos, qualidade da água, modernização urbana'
-    });
+  async loadData() {
+    const [cust, conc, insta] = await Promise.all([
+      this.landingPageService.getCustomersLogos(),
+      this.landingPageService.getCompanyLogos(),
+      this.landingPageService.getInstaGallery()
+    ]);
+    this.customers.set(cust);
+    this.concessionarias.set(conc);
+    this.instagramPosts.set(insta);
   }
 }
